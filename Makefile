@@ -1,8 +1,9 @@
 SHELL:=/bin/bash
+PACKAGE:=docker-alpine-node
 
 build:
-	docker build -t docker-alpine-node .
+	docker build -t ${PACKAGE} .
 
 push:
-	docker tag docker-alpine-node ${DOCKER_ID_USER}/docker-alpine-node
-	docker push ${DOCKER_ID_USER}/docker-alpine-node
+	docker tag ${PACKAGE} ${DOCKER_ID_USER}/${PACKAGE}
+	docker push ${DOCKER_ID_USER}/${PACKAGE}
